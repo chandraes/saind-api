@@ -24,7 +24,7 @@ class IncomingPayloadController extends Controller
         \App\Models\PayloadInbox::create([
             'batch_id'    => $batchId,
             'source_ip'   => $request->ip(),
-            'raw_payload' => json_encode($request->input('data')),
+            'raw_payload' => $request->input('data'),
             'status'      => 'pending'
         ]);
 
